@@ -10,11 +10,17 @@
 		8ABED074FC134493A6B569AA /* Pods_BiteTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABA4C66E175FE41ED59BC33 /* Pods_BiteTalk.framework */; };
 		C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134B82084FED800BB6E82 /* LoginViewController.swift */; };
 		C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134BA2085006900BB6E82 /* RegisterViewController.swift */; };
-		C073B3102084E3B0009F4DA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C073B30F2084E3B0009F4DA9 /* GoogleService-Info.plist */; };
+		C06ADF51208610C6004A9C9A /* InitSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */; };
+		C06ADF5520863CF1004A9C9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */; };
+		C06ADF572087572F004A9C9A /* InitContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF562087572F004A9C9A /* InitContainerViewController.swift */; };
+		C06ADF5920875F2D004A9C9A /* FirstInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF5820875F2D004A9C9A /* FirstInitViewController.swift */; };
 		C083578B2084D22A007575BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C083578A2084D22A007575BA /* AppDelegate.swift */; };
 		C08357902084D22A007575BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C083578E2084D22A007575BA /* Main.storyboard */; };
 		C08357922084D22D007575BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08357912084D22D007575BA /* Assets.xcassets */; };
 		C08357952084D22D007575BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08357932084D22D007575BA /* LaunchScreen.storyboard */; };
+		C0A4FC302087B5DE00C9856B /* SecondInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC2F2087B5DE00C9856B /* SecondInitViewController.swift */; };
+		C0A4FC322087B5EC00C9856B /* ThirdInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC312087B5EC00C9856B /* ThirdInitViewController.swift */; };
+		C0A4FC342087B5FB00C9856B /* ForthInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC332087B5FB00C9856B /* ForthInitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +28,19 @@
 		84CE898CB9600D19644BC461 /* Pods-BiteTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiteTalk/Pods-BiteTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		C01134B82084FED800BB6E82 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C01134BA2085006900BB6E82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		C073B30F2084E3B0009F4DA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitSettingViewController.swift; sourceTree = "<group>"; };
+		C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C06ADF562087572F004A9C9A /* InitContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitContainerViewController.swift; sourceTree = "<group>"; };
+		C06ADF5820875F2D004A9C9A /* FirstInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInitViewController.swift; sourceTree = "<group>"; };
 		C08357872084D22A007575BA /* BiteTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiteTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C083578A2084D22A007575BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C083578F2084D22A007575BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C08357912084D22D007575BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08357942084D22D007575BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08357962084D22D007575BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A4FC2F2087B5DE00C9856B /* SecondInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInitViewController.swift; sourceTree = "<group>"; };
+		C0A4FC312087B5EC00C9856B /* ThirdInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdInitViewController.swift; sourceTree = "<group>"; };
+		C0A4FC332087B5FB00C9856B /* ForthInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthInitViewController.swift; sourceTree = "<group>"; };
 		D27FB91D9D417FD50CF9111C /* Pods-BiteTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiteTalk/Pods-BiteTalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +76,8 @@
 		C01134B72084FEBA00BB6E82 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C01134B82084FED800BB6E82 /* LoginViewController.swift */,
-				C01134BA2085006900BB6E82 /* RegisterViewController.swift */,
+				C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */,
+				C0A4FC2D2087B1E900C9856B /* InitSettingViews */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -91,15 +103,37 @@
 		C08357892084D22A007575BA /* BiteTalk */ = {
 			isa = PBXGroup;
 			children = (
+				C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */,
 				C01134B72084FEBA00BB6E82 /* ViewController */,
 				C083578A2084D22A007575BA /* AppDelegate.swift */,
 				C083578E2084D22A007575BA /* Main.storyboard */,
 				C08357912084D22D007575BA /* Assets.xcassets */,
 				C08357932084D22D007575BA /* LaunchScreen.storyboard */,
 				C08357962084D22D007575BA /* Info.plist */,
-				C073B30F2084E3B0009F4DA9 /* GoogleService-Info.plist */,
 			);
 			path = BiteTalk;
+			sourceTree = "<group>";
+		};
+		C0A4FC2D2087B1E900C9856B /* InitSettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */,
+				C06ADF562087572F004A9C9A /* InitContainerViewController.swift */,
+				C06ADF5820875F2D004A9C9A /* FirstInitViewController.swift */,
+				C0A4FC2F2087B5DE00C9856B /* SecondInitViewController.swift */,
+				C0A4FC312087B5EC00C9856B /* ThirdInitViewController.swift */,
+				C0A4FC332087B5FB00C9856B /* ForthInitViewController.swift */,
+			);
+			path = InitSettingViews;
+			sourceTree = "<group>";
+		};
+		C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */ = {
+			isa = PBXGroup;
+			children = (
+				C01134B82084FED800BB6E82 /* LoginViewController.swift */,
+				C01134BA2085006900BB6E82 /* RegisterViewController.swift */,
+			);
+			path = LogingRegisterViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08357952084D22D007575BA /* LaunchScreen.storyboard in Resources */,
+				C06ADF5520863CF1004A9C9A /* GoogleService-Info.plist in Resources */,
 				C08357922084D22D007575BA /* Assets.xcassets in Resources */,
 				C08357902084D22A007575BA /* Main.storyboard in Resources */,
-				C073B3102084E3B0009F4DA9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,9 +255,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C06ADF572087572F004A9C9A /* InitContainerViewController.swift in Sources */,
+				C06ADF5920875F2D004A9C9A /* FirstInitViewController.swift in Sources */,
+				C0A4FC302087B5DE00C9856B /* SecondInitViewController.swift in Sources */,
 				C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */,
 				C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */,
 				C083578B2084D22A007575BA /* AppDelegate.swift in Sources */,
+				C0A4FC322087B5EC00C9856B /* ThirdInitViewController.swift in Sources */,
+				C0A4FC342087B5FB00C9856B /* ForthInitViewController.swift in Sources */,
+				C06ADF51208610C6004A9C9A /* InitSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sejong.shin.BiteTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = "bitetalk-shin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sejong.shin.BiteTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = "bitetalk-shin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

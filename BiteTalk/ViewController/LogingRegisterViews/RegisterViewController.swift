@@ -11,7 +11,6 @@ import Firebase
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwdTextField: UITextField!
     
@@ -27,7 +26,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func handleRegister(_ sender: UIButton) {
-        guard let email = emailTextField.text, let password = passwdTextField.text, let name = nicknameTextField.text else {
+        guard let email = emailTextField.text, let password = passwdTextField.text else {
             print("name or email or password is not valid")
             return
         }
@@ -44,7 +43,7 @@ class RegisterViewController: UIViewController {
             //successfully authenticated user
             let ref = Database.database().reference()
             let usersReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email, "mychats": ""] as [String : Any]
+            let values = ["email": email, "init setting": false] as [String : Any]
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 if err != nil {
                     print(err as Any)
@@ -53,10 +52,12 @@ class RegisterViewController: UIViewController {
             })
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
-            self.present(newviewcont, animated: true, completion: {
-                print("handleRegister...present..completion.")
-            })
+            let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
+            self.present(initViewCont, animated: true, completion: nil)
+//            let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
+//            self.present(newviewcont, animated: true, completion: {
+//                print("handleRegister...present..completion.")
+//            })
             
         }
     }
