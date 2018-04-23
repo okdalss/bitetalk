@@ -8,12 +8,21 @@
 
 import UIKit
 
-class FirstInitViewController: UIViewController {
+class FirstInitViewController: UIViewController, UITextFieldDelegate {
+    
+    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    @IBOutlet weak var nicknameTextfield: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        // background Img
+//        let backgroundImage = UIImageView(image: UIImage(named: "initsettingimg"))
+//        view.insertSubview(backgroundImage, at: 0)
+//        //
+        nicknameTextfield.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +30,13 @@ class FirstInitViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nicknameTextfield.resignFirstResponder()
+        return true
     }
-    */
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        let viewCont = storyBoard.instantiateViewController(withIdentifier: "initsettingview") as? InitSettingViewController
+        viewCont?.nickname = nicknameTextfield.text
+    }
 }

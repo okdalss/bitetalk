@@ -15,10 +15,14 @@ class InitSettingViewController: UIViewController {
     var stage = 0
     let maxStage = 3 // num of stage is 4
     
-    var nickname: String?
+    var nickname: String? {
+        didSet {
+            print("nickname is \(nickname)")
+        }
+    }
     var laguage: [String]?
     var toSay: String?
-    
+    var voice: URL?
     
     @IBOutlet weak var preButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -29,6 +33,8 @@ class InitSettingViewController: UIViewController {
         if stage == 0 {
             preButton.isHidden = true
         }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +67,7 @@ class InitSettingViewController: UIViewController {
         if stage != 0 {
             preButton.isHidden = false
         }
-        
+        self.dismissKeyboard()
     }
 
 }

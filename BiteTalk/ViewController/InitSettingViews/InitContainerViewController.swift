@@ -14,15 +14,17 @@ class InitContainerViewController: UIViewController {
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var seg: Int? {
         didSet {
-            addSubview(stage: seg!)
+            view.bringSubview(toFront: self.childViewControllers[seg!].view)
         }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-            addSubview(stage: 0)
+        for num in 0 ..< stageName.count {
+            addSubview(stage: num)
+            view.bringSubview(toFront: self.childViewControllers[0].view)
+        }
     }
 
     override func didReceiveMemoryWarning() {

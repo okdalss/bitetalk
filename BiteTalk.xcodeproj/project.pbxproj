@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8ABED074FC134493A6B569AA /* Pods_BiteTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABA4C66E175FE41ED59BC33 /* Pods_BiteTalk.framework */; };
+		C0003A58208E4F43000FDB74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0003A57208E4F43000FDB74 /* Extensions.swift */; };
+		C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0003A59208E56A0000FDB74 /* AddLangViewController.swift */; };
 		C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134B82084FED800BB6E82 /* LoginViewController.swift */; };
 		C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134BA2085006900BB6E82 /* RegisterViewController.swift */; };
 		C06ADF51208610C6004A9C9A /* InitSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		7ABA4C66E175FE41ED59BC33 /* Pods_BiteTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiteTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CE898CB9600D19644BC461 /* Pods-BiteTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiteTalk/Pods-BiteTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		C0003A57208E4F43000FDB74 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C0003A59208E56A0000FDB74 /* AddLangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLangViewController.swift; sourceTree = "<group>"; };
 		C01134B82084FED800BB6E82 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C01134BA2085006900BB6E82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitSettingViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +77,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C0003A56208E4F2A000FDB74 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C0003A57208E4F43000FDB74 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		C01134B72084FEBA00BB6E82 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C0003A56208E4F2A000FDB74 /* Helpers */,
 				C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */,
 				C0A4FC2D2087B1E900C9856B /* InitSettingViews */,
 			);
@@ -121,6 +134,7 @@
 				C06ADF562087572F004A9C9A /* InitContainerViewController.swift */,
 				C06ADF5820875F2D004A9C9A /* FirstInitViewController.swift */,
 				C0A4FC2F2087B5DE00C9856B /* SecondInitViewController.swift */,
+				C0003A59208E56A0000FDB74 /* AddLangViewController.swift */,
 				C0A4FC312087B5EC00C9856B /* ThirdInitViewController.swift */,
 				C0A4FC332087B5FB00C9856B /* ForthInitViewController.swift */,
 			);
@@ -259,7 +273,9 @@
 				C06ADF5920875F2D004A9C9A /* FirstInitViewController.swift in Sources */,
 				C0A4FC302087B5DE00C9856B /* SecondInitViewController.swift in Sources */,
 				C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */,
+				C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */,
 				C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */,
+				C0003A58208E4F43000FDB74 /* Extensions.swift in Sources */,
 				C083578B2084D22A007575BA /* AppDelegate.swift in Sources */,
 				C0A4FC322087B5EC00C9856B /* ThirdInitViewController.swift in Sources */,
 				C0A4FC342087B5FB00C9856B /* ForthInitViewController.swift in Sources */,
