@@ -10,36 +10,12 @@ import UIKit
 
 class AddLangViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-//    let countries = ["usa", "japan", "canada"]
-//    var countries: [String] = {
-//
-//        var arrayOfCountries: [String] = []
-//
-//        for code in NSLocale.isoCountryCodes as [String] {
-//            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
-//            let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
-//            arrayOfCountries.append(name)
-//        }
-//
-//        return arrayOfCountries
-//    }()
+    let languages = ["English", "한국어 (Korean)", "中文 (Chinese)", "日本語 (Japanese)", "Español (Spanish)", "Français (French)", "Deutsche (German)",
+                     "Pусский (Russian)", "Português (Portuguese)", "Italiano (Italian)", "Türkçe (Turkish)", "Nederlands (Dutch)", "العربية (Arabic)",
+                     "ภาษาไทย (Thai)", "Svenska (Swedish)", "Dansk (Danish)", "Tiếng Việt (Vietnamese)", "Norsk (Norwegin)", "Polski (Polish)",
+                     "Suomi (finnish)", "Bahasa Indonesia (Indonesian)", "עִברִית (Hebrew)", "Ελληνικά (Greek)", "Română (Romanian)", "Magyar (Hungarian)", "čeština (Czech)", "Català (Caralan)", "Slovenčina (Slovak)", "Українська (Ukrainian)", "Hrvatski (Croatian)", "Hahasa Melayu (Malay)", "हिंदी (Hindi)"]
     
-    var languages: [String] = {
-        
-        var arrayOfLaguages: [String] = []
-        
-        for code in NSLocale.isoLanguageCodes as [String] {
-            let lang = NSLocale.lo
-            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
-            let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
-//            arrayOfLaguages.append(name)
-            arrayOfLaguages.append(lang)
-        }
-        
-        return arrayOfLaguages
-    }()
-    
-    var selectedCountries: [String] = []
+    var selectedLanguages: [String] = []
     
     @IBOutlet weak var laguageTableView: UITableView!
 
@@ -74,12 +50,25 @@ class AddLangViewController: UIViewController, UITableViewDataSource, UITableVie
         let bool = cell?.detailTextLabel?.isHidden
         cell?.detailTextLabel?.isHidden = !bool!
         if bool == true {
-            selectedCountries.append((cell?.textLabel?.text)!)
-            print(selectedCountries)
+            selectedLanguages.append((cell?.textLabel?.text)!)
         } else {
-            selectedCountries = selectedCountries.filter() { $0 != (cell?.textLabel?.text)! }
-            print(selectedCountries)
+            selectedLanguages = selectedLanguages.filter() { $0 != (cell?.textLabel?.text)! }
         }
-        
     }
+    
+    @IBAction func handleDone(_ sender: UIBarButtonItem) {
+        if selectedLanguages.count != 0 {
+            UserSetting.shared().language = self.selectedLanguages
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let alertCont = UIAlertController(title: "Select at least 1 language", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action) in
+                return
+            }
+            alertCont.addAction(okAction)
+            self.present(alertCont, animated: true, completion: nil)
+        }
+
+    }
+    
 }

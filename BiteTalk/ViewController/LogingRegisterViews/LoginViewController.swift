@@ -86,4 +86,8 @@ class LoginViewController: UIViewController {
             return false
         }
     }
+    
+    @IBAction func unwindToLoginView(segue: UIStoryboardSegue) {
+        print("unwinded.")
+    }
 }

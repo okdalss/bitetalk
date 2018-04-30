@@ -10,7 +10,7 @@ import UIKit
 
 class InitContainerViewController: UIViewController {
     
-    let stageName = ["initfirst", "initsecond", "initthird", "initforth"]
+    let stageName = ["initfirst", "initgender", "initsecond", "initthird", "initforth"]
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var seg: Int? {
         didSet {

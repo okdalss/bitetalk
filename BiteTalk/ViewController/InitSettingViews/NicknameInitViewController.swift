@@ -1,5 +1,5 @@
 //
-//  FirstInitViewController.swift
+//  NicknameInitViewController.swift
 //  BiteTalk
 //
 //  Created by 신진욱 on 18/04/2018.
@@ -7,19 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
-class FirstInitViewController: UIViewController, UITextFieldDelegate {
-    
-    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+class NicknameInitViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nicknameTextfield: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        // background Img
-//        let backgroundImage = UIImageView(image: UIImage(named: "initsettingimg"))
-//        view.insertSubview(backgroundImage, at: 0)
-//        //
         nicknameTextfield.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -36,7 +31,17 @@ class FirstInitViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        let viewCont = storyBoard.instantiateViewController(withIdentifier: "initsettingview") as? InitSettingViewController
-        viewCont?.nickname = nicknameTextfield.text
+        let viewCont = parent?.parent as? InitSettingViewController
+        updateNickname()
+        viewCont?.nextButton.isEnabled = true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let viewCont = parent?.parent as? InitSettingViewController
+        viewCont?.nextButton.isEnabled = false
+    }
+    
+    func updateNickname() {
+            UserSetting.shared().nickname = nicknameTextfield.text!
     }
 }

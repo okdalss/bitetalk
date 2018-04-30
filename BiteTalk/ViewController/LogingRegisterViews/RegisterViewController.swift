@@ -54,11 +54,7 @@ class RegisterViewController: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
             self.present(initViewCont, animated: true, completion: nil)
-//            let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
-//            self.present(newviewcont, animated: true, completion: {
-//                print("handleRegister...present..completion.")
-//            })
-            
         }
     }
+    
 }
