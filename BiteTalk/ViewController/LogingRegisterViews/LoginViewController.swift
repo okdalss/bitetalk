@@ -21,18 +21,18 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if loginCheck() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if self.checkInitsetting() == false {
-                print("go to init setting view...")
-                let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
-                self.present(initViewCont, animated: false, completion: nil)
-            } else {
-                print("go to main tabbar view...")
-                let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
-                self.present(newviewcont, animated: false, completion: nil)
-            }
-        } 
+//        if loginCheck() {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            if self.checkInitsetting() == false {
+//                print("go to init setting view...")
+//                let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
+//                self.present(initViewCont, animated: false, completion: nil)
+//            } else {
+//                print("go to main tabbar view...")
+//                let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
+//                self.present(newviewcont, animated: false, completion: nil)
+//            }
+//        } 
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,16 +76,16 @@ class LoginViewController: UIViewController {
         return initvalue
     }
     
-    func loginCheck() -> Bool {
-        let auth = Auth.auth().currentUser?.uid
-        if auth != nil {
-            self.userRef = Database.database().reference().child("users").child(auth!)
-            return true
-        } else {
-            print("auth is nil")
-            return false
-        }
-    }
+//    func loginCheck() -> Bool {
+//        let auth = Auth.auth().currentUser?.uid
+//        if auth != nil {
+//            self.userRef = Database.database().reference().child("users").child(auth!)
+//            return true
+//        } else {
+//            print("auth is nil")
+//            return false
+//        }
+//    }
     
     @IBAction func unwindToLoginView(segue: UIStoryboardSegue) {
         print("unwinded.")
