@@ -75,13 +75,33 @@ class InitSettingViewController: UIViewController {
                 alertControll(message: "Add language")
             }
         case 3:
-            if UserSetting.shared().toSay != nil {
+            if UserSetting.shared().toSay.count != 0 {
                 stageControll()
             } else {
                 alertControll(message: "Say anything")
             }
+        case 4:
+            if UserSetting.shared().voice != nil {
+                handleDone()
+            } else {
+                alertControll(message: "Record your voice")
+            }
         default:
             return
+        }
+    }
+    
+    func handleDone() {
+        // check all setting values and save to database.
+        if UserSetting.shared().checkUserSetting() {
+            UserSetting.shared().saveToDatabase()
+            UserSetting.shared().saveVoiceToStorage()
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
+            self.present(newviewcont, animated: false, completion: nil)
+        } else {
+            print("something...missing..")
         }
     }
     
@@ -107,5 +127,7 @@ class InitSettingViewController: UIViewController {
         alertCont.addAction(okAction)
         self.present(alertCont, animated: true, completion: nil)
     }
+    
+
 
 }

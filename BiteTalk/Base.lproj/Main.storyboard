@@ -199,44 +199,75 @@
             </objects>
             <point key="canvasLocation" x="670" y="80"/>
         </scene>
-        <!--setting-->
+        <!--Total User-->
         <scene sceneID="7iz-YD-zHH">
             <objects>
-                <viewController id="S5F-cI-3Ax" sceneMemberID="viewController">
+                <viewController id="S5F-cI-3Ax" customClass="TotalUserViewController" customModule="BiteTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bl-BR-pyr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egB-jA-ElI">
-                                <rect key="frame" x="137" y="70" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="language" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDZ-yw-gmy">
-                                <rect key="frame" x="137" y="108" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you want to say" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-v8-1qf">
-                                <rect key="frame" x="97" y="146" width="180" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHu-BT-D8f">
+                                <rect key="frame" x="137" y="318" width="101" height="30"/>
+                                <state key="normal" title="Logout for test"/>
+                                <connections>
+                                    <action selector="handleLogout:" destination="S5F-cI-3Ax" eventType="touchUpInside" id="eZC-JG-knI"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.97647058819999999" green="0.4941176471" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dHu-BT-D8f" firstAttribute="centerY" secondItem="1bl-BR-pyr" secondAttribute="centerY" id="7fE-z1-5SO"/>
+                            <constraint firstItem="dHu-BT-D8f" firstAttribute="centerX" secondItem="1bl-BR-pyr" secondAttribute="centerX" id="Ic2-f9-E40"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bmd-LE-RWR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="setting" id="N51-Gp-6o1"/>
+                    <tabBarItem key="tabBarItem" title="Total User" id="N51-Gp-6o1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7C-61-0e5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="670" y="1528"/>
+        </scene>
+        <!--TestFCM View Controller-->
+        <scene sceneID="LFU-gn-9oE">
+            <objects>
+                <viewController id="dKh-F6-IKl" customClass="TestFCMViewController" customModule="BiteTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VI2-hp-cxO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmm-X9-aTl">
+                                <rect key="frame" x="125" y="101" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Subscribe to topic"/>
+                                <connections>
+                                    <action selector="handleSubscribeTP:" destination="dKh-F6-IKl" eventType="touchUpInside" id="8Sy-YF-NPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UE-rR-Hrj">
+                                <rect key="frame" x="169" y="193" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="handleSend:" destination="dKh-F6-IKl" eventType="touchUpInside" id="xxt-gN-ACj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1b-d1-yUM">
+                                <rect key="frame" x="116" y="274" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Unsubscribe to topic"/>
+                                <connections>
+                                    <action selector="handleUnsubscribeTP:" destination="dKh-F6-IKl" eventType="touchUpInside" id="lLn-gi-4rn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2ki-SL-bPa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQ9-65-Eig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="2240"/>
         </scene>
         <!--talks-->
         <scene sceneID="8LI-Ba-3jR">
@@ -246,15 +277,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zH-Hi-JNS">
-                                <rect key="frame" x="115" y="318" width="145" height="30"/>
-                                <state key="normal" title="Find people to talk to"/>
-                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Find people to talk to" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyV-Xb-Sqy">
+                                <rect key="frame" x="37" y="319" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.97647058819999999" green="0.4941176471" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2zH-Hi-JNS" firstAttribute="centerX" secondItem="tOb-RX-ZGd" secondAttribute="centerX" id="EPL-jl-wSS"/>
-                            <constraint firstItem="2zH-Hi-JNS" firstAttribute="centerY" secondItem="tOb-RX-ZGd" secondAttribute="centerY" id="zNg-Zb-r86"/>
+                            <constraint firstItem="kyV-Xb-Sqy" firstAttribute="leading" secondItem="yHb-dB-vwQ" secondAttribute="leading" constant="37" id="EjB-Ja-v8X"/>
+                            <constraint firstItem="kyV-Xb-Sqy" firstAttribute="centerY" secondItem="tOb-RX-ZGd" secondAttribute="centerY" id="Fbh-zZ-HOq"/>
+                            <constraint firstItem="kyV-Xb-Sqy" firstAttribute="centerX" secondItem="tOb-RX-ZGd" secondAttribute="centerX" id="Hy6-5N-EIc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yHb-dB-vwQ"/>
                     </view>
@@ -262,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjU-1v-BVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="773"/>
+            <point key="canvasLocation" x="1416.8" y="772.26386806596713"/>
         </scene>
         <!--The First Secection View Controller-->
         <scene sceneID="pdY-lf-5v9">

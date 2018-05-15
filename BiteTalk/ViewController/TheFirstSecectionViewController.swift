@@ -18,31 +18,24 @@ class TheFirstSecectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginCheckResult = loginCheck()
-        initSettingResult = checkInitsetting()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let _ = loginCheckResult, let _ = initSettingResult else {
-            print("something wrong")
-            return
-        }
-        if loginCheckResult! {
-            if self.checkInitsetting() == false {
-                print("go to init setting view...")
-                let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
-                self.present(initViewCont, animated: false, completion: nil)
-            } else {
-                print("go to main tabbar view...")
-                let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
-                self.present(newviewcont, animated: false, completion: nil)
-            }
+        if loginCheckResult == true {
+            checkInitsetting()
         } else {
-            let newviewcont = storyboard.instantiateViewController(withIdentifier: "loginviewcont")
-            self.present(newviewcont, animated: false, completion: nil)
+            toTheView(viewName: "loginviewcont")
+            
         }
     }
-
+    
+    func toTheView(viewName: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
+        print("go to \(viewName)")
+        self.present(newviewcont, animated: false, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,14 +52,37 @@ class TheFirstSecectionViewController: UIViewController {
         }
     }
     
-    func checkInitsetting() -> Bool {
-        var initvalue = false
-        if let userRef = userRef {
-            userRef.child("init setting").observe(.value) { (snap) in
-                initvalue = snap.value as! Bool
+    func checkInitsetting() {
+        let beforeRef = Database.database().reference().child("users").child("before_init")
+        let afterRef = Database.database().reference().child("users").child("after_init")
+        
+        afterRef.observeSingleEvent(of: .value) { (snap) in
+            if snap.hasChild(UserSetting.shared().uid) {
+                self.toTheView(viewName: "maintabbar")
+            } else {
+                beforeRef.observeSingleEvent(of: .value) { (snap) in
+                    if snap.hasChild(UserSetting.shared().uid) {
+                        self.toTheView(viewName: "initsettingview")
+                    } else {
+                        print("something wrong in initsetting...")
+                        self.handleLogout()
+                    }
+                }
             }
         }
-        return initvalue
+    }
+    
+    func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginviewcont")
+        //        self.dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        self.present(loginViewController, animated: false, completion: nil)
     }
 
 }

@@ -41,6 +41,6 @@ class WhatWantToSayInitViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateSay() {
-        UserSetting.shared().toSay = sayTextField.text
+        UserSetting.shared().toSay = sayTextField.text!
     }
 }

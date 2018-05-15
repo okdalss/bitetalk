@@ -14,25 +14,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwdTextField: UITextField!
     var userRef: DatabaseReference?
+    var userUid: String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        if loginCheck() {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            if self.checkInitsetting() == false {
-//                print("go to init setting view...")
-//                let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
-//                self.present(initViewCont, animated: false, completion: nil)
-//            } else {
-//                print("go to main tabbar view...")
-//                let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
-//                self.present(newviewcont, animated: false, completion: nil)
-//            }
-//        } 
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,41 +37,49 @@ class LoginViewController: UIViewController {
                 print(error)
                 return
             }
-            //successfully logged in our user
-            self.userRef = Database.database().reference().child("users").child((user?.uid)!)
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            if self.checkInitsetting() == false {
-                print("go to init setting view...")
-                let initViewCont = storyboard.instantiateViewController(withIdentifier: "initsettingview")
-                self.present(initViewCont, animated: true, completion: nil)
+            self.checkInitsetting()
+        }
+    }
+    
+    func checkInitsetting() {
+        let beforeRef = Database.database().reference().child("users").child("before_init")
+        let afterRef = Database.database().reference().child("users").child("after_init")
+        
+        afterRef.observeSingleEvent(of: .value) { (snap) in
+            if snap.hasChild(UserSetting.shared().uid) {
+                self.toTheView(viewName: "maintabbar")
             } else {
-                print("go to main tabbar view...")
-                let newviewcont = storyboard.instantiateViewController(withIdentifier: "maintabbar")
-                self.present(newviewcont, animated: true, completion: nil)
+                beforeRef.observeSingleEvent(of: .value) { (snap) in
+                    if snap.hasChild(UserSetting.shared().uid) {
+                        self.toTheView(viewName: "initsettingview")
+                    } else {
+                        print("something wrong in initsetting...")
+                        self.handleLogout()
+                    }
+                }
             }
         }
     }
     
-    func checkInitsetting() -> Bool {
-        var initvalue = false
-        if let userRef = userRef {
-            userRef.child("init setting").observe(.value) { (snap) in
-                initvalue = snap.value as! Bool
-            }
+    func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
         }
-        return initvalue
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginviewcont")
+        //        self.dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        self.present(loginViewController, animated: false, completion: nil)
     }
     
-//    func loginCheck() -> Bool {
-//        let auth = Auth.auth().currentUser?.uid
-//        if auth != nil {
-//            self.userRef = Database.database().reference().child("users").child(auth!)
-//            return true
-//        } else {
-//            print("auth is nil")
-//            return false
-//        }
-//    }
+    func toTheView(viewName: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
+        print("go to \(viewName)")
+        self.present(newviewcont, animated: false, completion: nil)
+    }
     
     @IBAction func unwindToLoginView(segue: UIStoryboardSegue) {
         print("unwinded.")
