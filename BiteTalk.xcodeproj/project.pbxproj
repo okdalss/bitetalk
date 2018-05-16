@@ -25,6 +25,7 @@
 		C08357922084D22D007575BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08357912084D22D007575BA /* Assets.xcassets */; };
 		C08357952084D22D007575BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08357932084D22D007575BA /* LaunchScreen.storyboard */; };
 		C08B1E7B209A1C1500D00B05 /* TheFirstSecectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */; };
+		C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3EAD820AC36F300DBAAAB /* User.swift */; };
 		C0A4FC302087B5DE00C9856B /* LanguageInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC2F2087B5DE00C9856B /* LanguageInitViewController.swift */; };
 		C0A4FC322087B5EC00C9856B /* WhatWantToSayInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC312087B5EC00C9856B /* WhatWantToSayInitViewController.swift */; };
 		C0A4FC342087B5FB00C9856B /* VoiceInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC332087B5FB00C9856B /* VoiceInitViewController.swift */; };
@@ -53,6 +54,7 @@
 		C08357942084D22D007575BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08357962084D22D007575BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFirstSecectionViewController.swift; sourceTree = "<group>"; };
+		C0A3EAD820AC36F300DBAAAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0A4FC2F2087B5DE00C9856B /* LanguageInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageInitViewController.swift; sourceTree = "<group>"; };
 		C0A4FC312087B5EC00C9856B /* WhatWantToSayInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWantToSayInitViewController.swift; sourceTree = "<group>"; };
 		C0A4FC332087B5FB00C9856B /* VoiceInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInitViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				C03E8C3420922838001FD80B /* UserSetting.swift */,
+				C0A3EAD820AC36F300DBAAAB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */,
 				C03E8C3520922838001FD80B /* UserSetting.swift in Sources */,
 				C070C87020A4389900B74A03 /* TestFCMViewController.swift in Sources */,
+				C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */,
 				C00151B4208F777A00F6D6AB /* GenderInitViewController.swift in Sources */,
 				C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */,
 				C0003A58208E4F43000FDB74 /* Extensions.swift in Sources */,

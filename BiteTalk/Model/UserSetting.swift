@@ -51,7 +51,9 @@ class UserSetting {
             afterUserRef.child(self.uid).setValue(snapshot.value)
             let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language, "toSay": self.toSay] as [String : Any]
             afterUserRef.child(self.uid).updateChildValues(userval)
-            beforeUserRef.removeValue()
+            afterUserRef.child(self.uid).updateChildValues(userval, withCompletionBlock: { (error, ref) in
+                beforeUserRef.removeValue()
+            })
         }
     }
     
@@ -59,4 +61,5 @@ class UserSetting {
         let voiceRef = Storage.storage().reference().child("/welcome_voice")
         voiceRef.child(uid).putFile(from: voice!)
     }
+
 }
