@@ -29,12 +29,12 @@ class TheFirstSecectionViewController: UIViewController {
         }
     }
     
-    func toTheView(viewName: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
-        print("go to \(viewName)")
-        self.present(newviewcont, animated: false, completion: nil)
-    }
+//    func toTheView(viewName: String) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
+//        print("go to \(viewName)")
+//        self.present(newviewcont, animated: false, completion: nil)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

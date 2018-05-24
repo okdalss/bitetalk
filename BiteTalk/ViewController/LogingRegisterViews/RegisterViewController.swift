@@ -43,7 +43,6 @@ class RegisterViewController: UIViewController {
             
             //successfully authenticated user
             let ref = Database.database().reference()
-//            let usersReference = ref.child("users").child(uid)
             let usersReference = ref.child("users").child("before_init").child(uid)
             let values = ["email": email] as [String : Any]
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in

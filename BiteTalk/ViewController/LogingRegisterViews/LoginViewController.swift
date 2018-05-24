@@ -76,12 +76,12 @@ class LoginViewController: UIViewController {
         self.present(loginViewController, animated: false, completion: nil)
     }
     
-    func toTheView(viewName: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
-        print("go to \(viewName)")
-        self.present(newviewcont, animated: false, completion: nil)
-    }
+//    func toTheView(viewName: String) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
+//        print("go to \(viewName)")
+//        self.present(newviewcont, animated: false, completion: nil)
+//    }
     
     @IBAction func unwindToLoginView(segue: UIStoryboardSegue) {
         print("unwinded.")

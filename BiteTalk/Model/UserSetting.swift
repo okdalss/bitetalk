@@ -17,11 +17,8 @@ class UserSetting {
     var toSay: String = ""
     var voice: URL?
     
-    private static var sharedUserSetting: UserSetting = {
-        let userSetting = UserSetting(uid: (Auth.auth().currentUser?.uid)!)
-        return userSetting
-    }()
-    
+    private static var sharedUserSetting: UserSetting?
+
     let uid: String
     
     private init(uid: String) {
@@ -29,7 +26,15 @@ class UserSetting {
     }
     
     class func shared() -> UserSetting {
-        return sharedUserSetting
+        guard let uwShared = sharedUserSetting else {
+            sharedUserSetting = UserSetting(uid: (Auth.auth().currentUser?.uid)!)
+            return sharedUserSetting!
+        }
+        return uwShared
+    }
+    
+    func destroy() {
+        UserSetting.sharedUserSetting = nil
     }
     
     func checkUserSetting() -> Bool {
@@ -51,9 +56,7 @@ class UserSetting {
             afterUserRef.child(self.uid).setValue(snapshot.value)
             let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language, "toSay": self.toSay] as [String : Any]
             afterUserRef.child(self.uid).updateChildValues(userval)
-            afterUserRef.child(self.uid).updateChildValues(userval, withCompletionBlock: { (error, ref) in
-                beforeUserRef.removeValue()
-            })
+            beforeUserRef.removeValue()
         }
     }
     

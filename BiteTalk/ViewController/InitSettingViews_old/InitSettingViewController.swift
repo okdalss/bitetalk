@@ -119,14 +119,14 @@ class InitSettingViewController: UIViewController {
         }
     }
     
-    func alertControll(message: String) {
-        let alertCont = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action) in
-            return
-        }
-        alertCont.addAction(okAction)
-        self.present(alertCont, animated: true, completion: nil)
-    }
+//    func alertControll(message: String) {
+//        let alertCont = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action) in
+//            return
+//        }
+//        alertCont.addAction(okAction)
+//        self.present(alertCont, animated: true, completion: nil)
+//    }
     
 
 

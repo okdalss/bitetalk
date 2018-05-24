@@ -20,6 +20,11 @@
 		C06ADF5920875F2D004A9C9A /* NicknameInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF5820875F2D004A9C9A /* NicknameInitViewController.swift */; };
 		C070C87020A4389900B74A03 /* TestFCMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C86F20A4389900B74A03 /* TestFCMViewController.swift */; };
 		C070C87220A5D88600B74A03 /* TotalUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C87120A5D88600B74A03 /* TotalUserViewController.swift */; };
+		C0724EDD20B54E97005E7B52 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EDC20B54E97005E7B52 /* IntroduceViewController.swift */; };
+		C0724EDF20B559EF005E7B52 /* GenderSelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EDE20B559EF005E7B52 /* GenderSelViewController.swift */; };
+		C0724EE320B6676C005E7B52 /* LanguageSelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EE220B6676C005E7B52 /* LanguageSelViewController.swift */; };
+		C0724EE720B6C284005E7B52 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EE620B6C284005E7B52 /* NicknameViewController.swift */; };
+		C0724EE920B6C8F5005E7B52 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EE820B6C8F5005E7B52 /* VoiceViewController.swift */; };
 		C083578B2084D22A007575BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C083578A2084D22A007575BA /* AppDelegate.swift */; };
 		C08357902084D22A007575BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C083578E2084D22A007575BA /* Main.storyboard */; };
 		C08357922084D22D007575BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08357912084D22D007575BA /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 		C06ADF5820875F2D004A9C9A /* NicknameInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInitViewController.swift; sourceTree = "<group>"; };
 		C070C86F20A4389900B74A03 /* TestFCMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFCMViewController.swift; sourceTree = "<group>"; };
 		C070C87120A5D88600B74A03 /* TotalUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalUserViewController.swift; sourceTree = "<group>"; };
+		C0724EDC20B54E97005E7B52 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
+		C0724EDE20B559EF005E7B52 /* GenderSelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelViewController.swift; sourceTree = "<group>"; };
+		C0724EE220B6676C005E7B52 /* LanguageSelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelViewController.swift; sourceTree = "<group>"; };
+		C0724EE620B6C284005E7B52 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		C0724EE820B6C8F5005E7B52 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
 		C08357872084D22A007575BA /* BiteTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiteTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C083578A2084D22A007575BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C083578F2084D22A007575BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +114,8 @@
 				C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */,
 				C070C87120A5D88600B74A03 /* TotalUserViewController.swift */,
 				C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */,
-				C0A4FC2D2087B1E900C9856B /* InitSettingViews */,
+				C0A3EADA20ADA1CC00DBAAAB /* InitSettingView */,
+				C0A4FC2D2087B1E900C9856B /* InitSettingViews_old */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -154,7 +165,20 @@
 			path = BiteTalk;
 			sourceTree = "<group>";
 		};
-		C0A4FC2D2087B1E900C9856B /* InitSettingViews */ = {
+		C0A3EADA20ADA1CC00DBAAAB /* InitSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				C0724EDC20B54E97005E7B52 /* IntroduceViewController.swift */,
+				C0724EDE20B559EF005E7B52 /* GenderSelViewController.swift */,
+				C0724EE220B6676C005E7B52 /* LanguageSelViewController.swift */,
+				C0003A59208E56A0000FDB74 /* AddLangViewController.swift */,
+				C0724EE620B6C284005E7B52 /* NicknameViewController.swift */,
+				C0724EE820B6C8F5005E7B52 /* VoiceViewController.swift */,
+			);
+			path = InitSettingView;
+			sourceTree = "<group>";
+		};
+		C0A4FC2D2087B1E900C9856B /* InitSettingViews_old */ = {
 			isa = PBXGroup;
 			children = (
 				C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */,
@@ -162,11 +186,10 @@
 				C06ADF5820875F2D004A9C9A /* NicknameInitViewController.swift */,
 				C00151B3208F777A00F6D6AB /* GenderInitViewController.swift */,
 				C0A4FC2F2087B5DE00C9856B /* LanguageInitViewController.swift */,
-				C0003A59208E56A0000FDB74 /* AddLangViewController.swift */,
 				C0A4FC312087B5EC00C9856B /* WhatWantToSayInitViewController.swift */,
 				C0A4FC332087B5FB00C9856B /* VoiceInitViewController.swift */,
 			);
-			path = InitSettingViews;
+			path = InitSettingViews_old;
 			sourceTree = "<group>";
 		};
 		C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */ = {
@@ -312,10 +335,15 @@
 				C0A4FC302087B5DE00C9856B /* LanguageInitViewController.swift in Sources */,
 				C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */,
 				C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */,
+				C0724EE320B6676C005E7B52 /* LanguageSelViewController.swift in Sources */,
+				C0724EE720B6C284005E7B52 /* NicknameViewController.swift in Sources */,
 				C03E8C3520922838001FD80B /* UserSetting.swift in Sources */,
 				C070C87020A4389900B74A03 /* TestFCMViewController.swift in Sources */,
 				C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */,
+				C0724EDD20B54E97005E7B52 /* IntroduceViewController.swift in Sources */,
+				C0724EE920B6C8F5005E7B52 /* VoiceViewController.swift in Sources */,
 				C00151B4208F777A00F6D6AB /* GenderInitViewController.swift in Sources */,
+				C0724EDF20B559EF005E7B52 /* GenderSelViewController.swift in Sources */,
 				C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */,
 				C0003A58208E4F43000FDB74 /* Extensions.swift in Sources */,
 				C070C87220A5D88600B74A03 /* TotalUserViewController.swift in Sources */,

@@ -59,6 +59,10 @@ class AddLangViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func handleDone(_ sender: UIBarButtonItem) {
         if selectedLanguages.count != 0 {
             UserSetting.shared().language = self.selectedLanguages
+            if let viewcont = self.presentingViewController as? LanguageSelViewController {
+                viewcont.nextLabel.isHidden = false
+                viewcont.selLangButton.setTitle("\(selectedLanguages.count) languages selected", for: .normal)
+            }
             self.dismiss(animated: true, completion: nil)
         } else {
             let alertCont = UIAlertController(title: "Select at least 1 language", message: nil, preferredStyle: UIAlertControllerStyle.alert)

@@ -129,7 +129,7 @@ class TotalUserViewController: UIViewController {
 //        self.dismiss(animated: true, completion: nil)
 //        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         self.present(loginViewController, animated: false, completion: nil)
-
+        UserSetting.shared().destroy()
     }
 
     
