@@ -804,68 +804,117 @@ you want to meet?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-9e-CER">
-                                <rect key="frame" x="106" y="146" width="162" height="30"/>
+                                <rect key="frame" x="104.5" y="146" width="165" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-ZV-W75">
                                         <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
                                         <state key="normal" title="PREVIOUS"/>
                                         <connections>
                                             <action selector="handlePrevious:" destination="ZhN-vr-v8R" eventType="touchUpInside" id="cA8-JI-4gm"/>
-                                            <action selector="handlePrevious:" destination="ZuS-2y-HoB" eventType="touchUpInside" id="cKu-mF-xU2"/>
                                             <action selector="handlePrevious:" destination="Esm-at-Hnz" eventType="touchUpInside" id="ktg-Aa-MAN"/>
+                                            <action selector="handlePrevious:" destination="ZuS-2y-HoB" eventType="touchUpInside" id="pfU-0z-Sy5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU8-4A-J7a">
-                                        <rect key="frame" x="123" y="0.0" width="39" height="30"/>
-                                        <state key="normal" title="NEXT"/>
+                                        <rect key="frame" x="123" y="0.0" width="42" height="30"/>
+                                        <state key="normal" title="DONE"/>
+                                        <connections>
+                                            <action selector="hadleDone:" destination="ZuS-2y-HoB" eventType="touchUpInside" id="sgI-lX-WEf"/>
+                                            <segue destination="yBS-iA-0yj" kind="show" id="zzP-qR-sIX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGi-iZ-2yI">
-                                <rect key="frame" x="11" y="290" width="353" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="a2Q-vi-VDU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Please press the below button to answer)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWk-7H-TLB">
-                                <rect key="frame" x="11" y="333" width="353" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="uha-Nv-2HX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVr-pe-BAq">
-                                <rect key="frame" x="157" y="415" width="61" height="30"/>
-                                <state key="normal" title="RECORD"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QbR-ga-mIE">
+                                <rect key="frame" x="165" y="413" width="45" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVr-pe-BAq">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                        <state key="normal" title="play"/>
+                                        <connections>
+                                            <action selector="handlePlay:" destination="ZuS-2y-HoB" eventType="touchUpInside" id="0kh-eJ-xnd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdc-Uf-l7h">
+                                        <rect key="frame" x="0.0" y="30" width="45" height="30"/>
+                                        <state key="normal" title="record"/>
+                                        <connections>
+                                            <action selector="handleRecord:" destination="ZuS-2y-HoB" eventType="touchUpInside" id="NdQ-wy-B8y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4od-b8-h8a">
+                                <rect key="frame" x="17" y="289" width="340" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGi-iZ-2yI">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="a2Q-vi-VDU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Please press the below button to answer)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWk-7H-TLB">
+                                        <rect key="frame" x="0.0" y="44" width="340" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="8Z0-Bt-Nb3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oF4-sp-dSz" firstAttribute="bottom" secondItem="BVr-pe-BAq" secondAttribute="bottom" constant="222" id="0Ye-WG-iSZ"/>
-                            <constraint firstItem="TGi-iZ-2yI" firstAttribute="leading" secondItem="SWk-7H-TLB" secondAttribute="leading" id="8I9-dD-EqS"/>
-                            <constraint firstItem="Zt7-9e-CER" firstAttribute="centerX" secondItem="TGi-iZ-2yI" secondAttribute="centerX" id="DTY-zJ-9Ia"/>
-                            <constraint firstItem="BVr-pe-BAq" firstAttribute="centerX" secondItem="SWk-7H-TLB" secondAttribute="centerX" id="E7X-id-z5g"/>
-                            <constraint firstItem="TGi-iZ-2yI" firstAttribute="top" secondItem="9q2-g2-75B" secondAttribute="top" constant="290" id="FLU-9i-XKc"/>
-                            <constraint firstItem="BVr-pe-BAq" firstAttribute="top" secondItem="SWk-7H-TLB" secondAttribute="bottom" constant="38" id="fqZ-9X-MFV"/>
+                            <constraint firstItem="oF4-sp-dSz" firstAttribute="bottom" secondItem="QbR-ga-mIE" secondAttribute="bottom" constant="194" id="0ek-C6-gNK"/>
+                            <constraint firstItem="4od-b8-h8a" firstAttribute="centerX" secondItem="QbR-ga-mIE" secondAttribute="centerX" id="MeO-6C-fDh"/>
+                            <constraint firstItem="4od-b8-h8a" firstAttribute="centerX" secondItem="Zt7-9e-CER" secondAttribute="centerX" id="Wph-5p-CFE"/>
+                            <constraint firstItem="4od-b8-h8a" firstAttribute="centerY" secondItem="9q2-g2-75B" secondAttribute="centerY" id="a7a-Y3-BHH"/>
                             <constraint firstItem="Zt7-9e-CER" firstAttribute="top" secondItem="oF4-sp-dSz" secondAttribute="top" constant="126" id="jlb-MN-Gsb"/>
-                            <constraint firstItem="TGi-iZ-2yI" firstAttribute="trailing" secondItem="SWk-7H-TLB" secondAttribute="trailing" id="nZg-ZJ-5cN"/>
-                            <constraint firstItem="TGi-iZ-2yI" firstAttribute="leading" secondItem="oF4-sp-dSz" secondAttribute="leading" constant="11" id="oX0-J5-EIB"/>
-                            <constraint firstItem="TGi-iZ-2yI" firstAttribute="centerX" secondItem="9q2-g2-75B" secondAttribute="centerX" id="v1N-Iw-3kh"/>
+                            <constraint firstItem="4od-b8-h8a" firstAttribute="centerX" secondItem="9q2-g2-75B" secondAttribute="centerX" id="wKX-aX-grt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oF4-sp-dSz"/>
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="oU8-4A-J7a" id="s6P-pY-Ghu"/>
+                        <outlet property="playButton" destination="BVr-pe-BAq" id="MyV-HN-Spe"/>
+                        <outlet property="recordButton" destination="hdc-Uf-l7h" id="8ve-US-uVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJa-pe-ucg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3661.5999999999999" y="79.610194902548727"/>
+        </scene>
+        <!--Save Init Setting View Controller-->
+        <scene sceneID="Irb-lf-zO3">
+            <objects>
+                <viewController id="yBS-iA-0yj" customClass="SaveInitSettingViewController" customModule="BiteTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GSv-Bq-XzO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(this will be saving animation)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs4-zp-2Zy">
+                                <rect key="frame" x="74" y="323" width="226" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vs4-zp-2Zy" firstAttribute="centerY" secondItem="GSv-Bq-XzO" secondAttribute="centerY" id="4n0-IX-mqC"/>
+                            <constraint firstItem="Vs4-zp-2Zy" firstAttribute="centerX" secondItem="GSv-Bq-XzO" secondAttribute="centerX" id="blK-If-mBA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8RA-VB-yPP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTc-ts-mbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4409" y="80"/>
         </scene>
         <!--What Want To Say Init View Controller-->
         <scene sceneID="TTK-g5-Loz">

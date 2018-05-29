@@ -28,8 +28,10 @@ class UserSetting {
     class func shared() -> UserSetting {
         guard let uwShared = sharedUserSetting else {
             sharedUserSetting = UserSetting(uid: (Auth.auth().currentUser?.uid)!)
+//            print("UserSetting uid: \(Auth.auth().currentUser?.uid)")
             return sharedUserSetting!
         }
+//        print("UserSetting uid: \(Auth.auth().currentUser?.uid)")
         return uwShared
     }
     
@@ -37,8 +39,21 @@ class UserSetting {
         UserSetting.sharedUserSetting = nil
     }
     
+    // MARK: for init setting old.
     func checkUserSetting() -> Bool {
         if nickname.count != 0 && toSay.count != 0 {
+            guard let gen = gender, let lang = language, let voice = voice else {
+                return false
+            }
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    // MARK: for init setting new. (checkUserSetting new virsion.)
+    func userSettingCheck() -> Bool {
+        if nickname.count != 0 {
             guard let gen = gender, let lang = language, let voice = voice else {
                 return false
             }
@@ -57,6 +72,23 @@ class UserSetting {
             let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language, "toSay": self.toSay] as [String : Any]
             afterUserRef.child(self.uid).updateChildValues(userval)
             beforeUserRef.removeValue()
+        }
+    }
+    
+    func saveToDatabase_new() {
+        let afterUserRef = Database.database().reference().child("users").child("after_init")
+        let beforeUserRef = Database.database().reference().child("users").child("before_init")
+        
+        beforeUserRef.child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            afterUserRef.child(self.uid).setValue(snapshot.value)
+            let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language] as [String : Any]
+//            afterUserRef.child(self.uid).updateChildValues(userval)
+//            beforeUserRef.removeValue()
+            afterUserRef.child(self.uid).updateChildValues(userval, withCompletionBlock: { (error, refence) in
+                    beforeUserRef.child(UserSetting.shared().uid).removeValue()
+                    print("remove \(UserSetting.shared().uid) in before directory.")
+                
+            })
         }
     }
     
