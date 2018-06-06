@@ -24,8 +24,8 @@ class TheFirstSecectionViewController: UIViewController {
         if loginCheckResult == true {
             checkInitsetting()
         } else {
+            UserSetting.shared().destroy()
             toTheView(viewName: "loginviewcont")
-            
         }
     }
     

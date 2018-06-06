@@ -80,14 +80,17 @@ class UserSetting {
         let beforeUserRef = Database.database().reference().child("users").child("before_init")
         
         beforeUserRef.child(uid).observeSingleEvent(of: .value) { (snapshot) in
-            afterUserRef.child(self.uid).setValue(snapshot.value)
-            let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language] as [String : Any]
+//            afterUserRef.child(self.uid).setValue(snapshot.value)
+            let email = snapshot.childSnapshot(forPath: "email").value
+            let userval = ["email": email, "nickname": self.nickname, "gender": self.gender, "language": self.language] as [String : Any]
+            
 //            afterUserRef.child(self.uid).updateChildValues(userval)
 //            beforeUserRef.removeValue()
+            
             afterUserRef.child(self.uid).updateChildValues(userval, withCompletionBlock: { (error, refence) in
                     beforeUserRef.child(UserSetting.shared().uid).removeValue()
                     print("remove \(UserSetting.shared().uid) in before directory.")
-                
+
             })
         }
     }
