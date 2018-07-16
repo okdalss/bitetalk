@@ -39,7 +39,8 @@ class VoiceViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
             audioSessionRecord.finishRecording(success: true)
             audioSessionRecord.fileManage()
-            UserSetting.shared().voice = audioSessionRecord.audioFile
+//            UserSetting.shared().voice = audioSessionRecord.audioFile
+            UserDefaults.standard.set(audioSessionRecord.audioFile, forKey: "voice")
             recordButton.setTitle("record again", for: .normal)
             playButton.isHidden = false
             nextButton.isHidden = false 
@@ -70,7 +71,8 @@ class VoiceViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func handlePrevious(_ sender: UIButton) {
         dismiss(animated: true) {
-            UserSetting.shared().voice = nil
+//            UserSetting.shared().voice = nil
+            UserDefaults.standard.set(nil, forKey: "voice")
         }
     }
     

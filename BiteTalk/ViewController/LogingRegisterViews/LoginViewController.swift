@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
                 print(error)
                 return
             }
+            UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "uid")
             self.checkInitsetting()
         }
     }
@@ -48,11 +49,13 @@ class LoginViewController: UIViewController {
         let afterRef = Database.database().reference().child("users").child("after_init")
         
         afterRef.observeSingleEvent(of: .value) { (snap) in
-            if snap.hasChild(UserSetting.shared().uid) {
+//            if snap.hasChild(UserSetting.shared().uid) {
+            if snap.hasChild(UserDefaults.standard.string(forKey: "uid")!) {
                 self.toTheView(viewName: "maintabbar")
             } else {
                 beforeRef.observeSingleEvent(of: .value) { (snap) in
-                    if snap.hasChild(UserSetting.shared().uid) {
+//                    if snap.hasChild(UserSetting.shared().uid) {
+                    if snap.hasChild(UserDefaults.standard.string(forKey: "uid")!) {
                         self.toTheView(viewName: "initsettingview")
                     } else {
                         print("something wrong in initsetting...")

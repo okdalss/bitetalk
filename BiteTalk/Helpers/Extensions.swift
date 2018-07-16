@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UIViewController {
     @objc func dismissKeyboard() {
@@ -27,5 +28,38 @@ extension UIViewController {
         }
         alertCont.addAction(okAction)
         self.present(alertCont, animated: true, completion: nil)
+    }
+}
+
+extension UserDefaults {
+    func userDefaultsCheck() -> Bool {
+        if UserDefaults.standard.string(forKey: "nickname")?.count != 0 {
+            guard let _ = UserDefaults.standard.stringArray(forKey: "language"), let _ = UserDefaults.standard.url(forKey: "voice") else {
+                return false
+            }
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func saveToDatabase() {
+        let afterUserRef = Database.database().reference().child("users").child("after_init")
+        let beforeUserRef = Database.database().reference().child("users").child("before_init")
+        
+        beforeUserRef.child(UserDefaults.standard.string(forKey: "uid")!).observeSingleEvent(of: .value) { (snapshot) in
+            let email = snapshot.childSnapshot(forPath: "email").value
+            let userval = ["email": email, "nickname": UserDefaults.standard.string(forKey: "nickname"), "gender": UserDefaults.standard.integer(forKey: "gender"), "language": UserDefaults.standard.stringArray(forKey: "language"), "numFriends": UserDefaults.standard.integer(forKey: "numFriends"), "numCell": UserDefaults.standard.integer(forKey: "numCell")] as [String : Any]
+            afterUserRef.child(UserDefaults.standard.string(forKey: "uid")!).updateChildValues(userval, withCompletionBlock: { (error, refence) in
+                beforeUserRef.child(UserSetting.shared().uid).removeValue()
+                print("remove \(UserSetting.shared().uid) in before directory.")
+                
+            })
+        }
+    }
+    
+    func saveToStorage() {
+        let voiceRef = Storage.storage().reference().child("/welcome_voice")
+        voiceRef.child(UserDefaults.standard.string(forKey: "uid")!).putFile(from: UserDefaults.standard.url(forKey: "voice")!)
     }
 }

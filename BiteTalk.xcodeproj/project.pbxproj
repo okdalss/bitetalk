@@ -10,17 +10,13 @@
 		8ABED074FC134493A6B569AA /* Pods_BiteTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABA4C66E175FE41ED59BC33 /* Pods_BiteTalk.framework */; };
 		C0003A58208E4F43000FDB74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0003A57208E4F43000FDB74 /* Extensions.swift */; };
 		C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0003A59208E56A0000FDB74 /* AddLangViewController.swift */; };
-		C00151B4208F777A00F6D6AB /* GenderInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00151B3208F777A00F6D6AB /* GenderInitViewController.swift */; };
 		C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134B82084FED800BB6E82 /* LoginViewController.swift */; };
 		C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134BA2085006900BB6E82 /* RegisterViewController.swift */; };
 		C03E8C3520922838001FD80B /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8C3420922838001FD80B /* UserSetting.swift */; };
 		C05C643D20B7C8A8005E4ED8 /* AudioSessionandRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05C643C20B7C8A8005E4ED8 /* AudioSessionandRecord.swift */; };
-		C06ADF51208610C6004A9C9A /* InitSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */; };
 		C06ADF5520863CF1004A9C9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */; };
-		C06ADF572087572F004A9C9A /* InitContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF562087572F004A9C9A /* InitContainerViewController.swift */; };
-		C06ADF5920875F2D004A9C9A /* NicknameInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06ADF5820875F2D004A9C9A /* NicknameInitViewController.swift */; };
 		C070C87020A4389900B74A03 /* TestFCMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C86F20A4389900B74A03 /* TestFCMViewController.swift */; };
-		C070C87220A5D88600B74A03 /* TotalUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C87120A5D88600B74A03 /* TotalUserViewController.swift */; };
+		C070C87220A5D88600B74A03 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C87120A5D88600B74A03 /* FriendsViewController.swift */; };
 		C0724EDD20B54E97005E7B52 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EDC20B54E97005E7B52 /* IntroduceViewController.swift */; };
 		C0724EDF20B559EF005E7B52 /* GenderSelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EDE20B559EF005E7B52 /* GenderSelViewController.swift */; };
 		C0724EE320B6676C005E7B52 /* LanguageSelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0724EE220B6676C005E7B52 /* LanguageSelViewController.swift */; };
@@ -32,9 +28,6 @@
 		C08357952084D22D007575BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08357932084D22D007575BA /* LaunchScreen.storyboard */; };
 		C08B1E7B209A1C1500D00B05 /* TheFirstSecectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */; };
 		C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3EAD820AC36F300DBAAAB /* User.swift */; };
-		C0A4FC302087B5DE00C9856B /* LanguageInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC2F2087B5DE00C9856B /* LanguageInitViewController.swift */; };
-		C0A4FC322087B5EC00C9856B /* WhatWantToSayInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC312087B5EC00C9856B /* WhatWantToSayInitViewController.swift */; };
-		C0A4FC342087B5FB00C9856B /* VoiceInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FC332087B5FB00C9856B /* VoiceInitViewController.swift */; };
 		C0B9B94D20B7F029007EADDE /* SaveInitSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B9B94C20B7F029007EADDE /* SaveInitSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,18 +36,14 @@
 		84CE898CB9600D19644BC461 /* Pods-BiteTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiteTalk/Pods-BiteTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		C0003A57208E4F43000FDB74 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C0003A59208E56A0000FDB74 /* AddLangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLangViewController.swift; sourceTree = "<group>"; };
-		C00151B3208F777A00F6D6AB /* GenderInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderInitViewController.swift; sourceTree = "<group>"; };
 		C01134B82084FED800BB6E82 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C01134BA2085006900BB6E82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C03E8C3420922838001FD80B /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		C03E8C3A20925FEF001FD80B /* BiteTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BiteTalk.entitlements; sourceTree = "<group>"; };
 		C05C643C20B7C8A8005E4ED8 /* AudioSessionandRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionandRecord.swift; sourceTree = "<group>"; };
-		C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitSettingViewController.swift; sourceTree = "<group>"; };
 		C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C06ADF562087572F004A9C9A /* InitContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitContainerViewController.swift; sourceTree = "<group>"; };
-		C06ADF5820875F2D004A9C9A /* NicknameInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInitViewController.swift; sourceTree = "<group>"; };
 		C070C86F20A4389900B74A03 /* TestFCMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFCMViewController.swift; sourceTree = "<group>"; };
-		C070C87120A5D88600B74A03 /* TotalUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalUserViewController.swift; sourceTree = "<group>"; };
+		C070C87120A5D88600B74A03 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		C0724EDC20B54E97005E7B52 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		C0724EDE20B559EF005E7B52 /* GenderSelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelViewController.swift; sourceTree = "<group>"; };
 		C0724EE220B6676C005E7B52 /* LanguageSelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelViewController.swift; sourceTree = "<group>"; };
@@ -68,9 +57,6 @@
 		C08357962084D22D007575BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFirstSecectionViewController.swift; sourceTree = "<group>"; };
 		C0A3EAD820AC36F300DBAAAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C0A4FC2F2087B5DE00C9856B /* LanguageInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageInitViewController.swift; sourceTree = "<group>"; };
-		C0A4FC312087B5EC00C9856B /* WhatWantToSayInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWantToSayInitViewController.swift; sourceTree = "<group>"; };
-		C0A4FC332087B5FB00C9856B /* VoiceInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInitViewController.swift; sourceTree = "<group>"; };
 		C0B9B94C20B7F029007EADDE /* SaveInitSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInitSettingViewController.swift; sourceTree = "<group>"; };
 		D27FB91D9D417FD50CF9111C /* Pods-BiteTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiteTalk/Pods-BiteTalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,10 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */,
-				C070C87120A5D88600B74A03 /* TotalUserViewController.swift */,
+				C070C87120A5D88600B74A03 /* FriendsViewController.swift */,
 				C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */,
 				C0A3EADA20ADA1CC00DBAAAB /* InitSettingView */,
-				C0A4FC2D2087B1E900C9856B /* InitSettingViews_old */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -182,20 +167,6 @@
 				C0B9B94C20B7F029007EADDE /* SaveInitSettingViewController.swift */,
 			);
 			path = InitSettingView;
-			sourceTree = "<group>";
-		};
-		C0A4FC2D2087B1E900C9856B /* InitSettingViews_old */ = {
-			isa = PBXGroup;
-			children = (
-				C06ADF50208610C6004A9C9A /* InitSettingViewController.swift */,
-				C06ADF562087572F004A9C9A /* InitContainerViewController.swift */,
-				C06ADF5820875F2D004A9C9A /* NicknameInitViewController.swift */,
-				C00151B3208F777A00F6D6AB /* GenderInitViewController.swift */,
-				C0A4FC2F2087B5DE00C9856B /* LanguageInitViewController.swift */,
-				C0A4FC312087B5EC00C9856B /* WhatWantToSayInitViewController.swift */,
-				C0A4FC332087B5FB00C9856B /* VoiceInitViewController.swift */,
-			);
-			path = InitSettingViews_old;
 			sourceTree = "<group>";
 		};
 		C0A4FC2E2087B20A00C9856B /* LogingRegisterViews */ = {
@@ -336,9 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06ADF572087572F004A9C9A /* InitContainerViewController.swift in Sources */,
-				C06ADF5920875F2D004A9C9A /* NicknameInitViewController.swift in Sources */,
-				C0A4FC302087B5DE00C9856B /* LanguageInitViewController.swift in Sources */,
 				C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */,
 				C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */,
 				C0724EE320B6676C005E7B52 /* LanguageSelViewController.swift in Sources */,
@@ -350,16 +318,12 @@
 				C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */,
 				C0724EDD20B54E97005E7B52 /* IntroduceViewController.swift in Sources */,
 				C0724EE920B6C8F5005E7B52 /* VoiceViewController.swift in Sources */,
-				C00151B4208F777A00F6D6AB /* GenderInitViewController.swift in Sources */,
 				C0724EDF20B559EF005E7B52 /* GenderSelViewController.swift in Sources */,
 				C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */,
 				C0003A58208E4F43000FDB74 /* Extensions.swift in Sources */,
-				C070C87220A5D88600B74A03 /* TotalUserViewController.swift in Sources */,
+				C070C87220A5D88600B74A03 /* FriendsViewController.swift in Sources */,
 				C08B1E7B209A1C1500D00B05 /* TheFirstSecectionViewController.swift in Sources */,
 				C083578B2084D22A007575BA /* AppDelegate.swift in Sources */,
-				C0A4FC322087B5EC00C9856B /* WhatWantToSayInitViewController.swift in Sources */,
-				C0A4FC342087B5FB00C9856B /* VoiceInitViewController.swift in Sources */,
-				C06ADF51208610C6004A9C9A /* InitSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

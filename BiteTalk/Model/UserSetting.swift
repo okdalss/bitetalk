@@ -16,6 +16,8 @@ class UserSetting {
     var language: [String]?
     var toSay: String = ""
     var voice: URL?
+    var numFriends: Int?
+    var numCell: Int?
     
     private static var sharedUserSetting: UserSetting?
 
@@ -26,6 +28,7 @@ class UserSetting {
     }
     
     class func shared() -> UserSetting {
+        print("shared........")
         guard let uwShared = sharedUserSetting else {
             sharedUserSetting = UserSetting(uid: (Auth.auth().currentUser?.uid)!)
 //            print("UserSetting uid: \(Auth.auth().currentUser?.uid)")
@@ -35,21 +38,22 @@ class UserSetting {
         return uwShared
     }
     
-    func destroy() {
+    static func destroy() {
+        print("destroy......")
         UserSetting.sharedUserSetting = nil
     }
     
     // MARK: for init setting old.
-    func checkUserSetting() -> Bool {
-        if nickname.count != 0 && toSay.count != 0 {
-            guard let gen = gender, let lang = language, let voice = voice else {
-                return false
-            }
-            return true
-        } else {
-            return false
-        }
-    }
+//    func checkUserSetting() -> Bool {
+//        if nickname.count != 0 && toSay.count != 0 {
+//            guard let gen = gender, let lang = language, let voice = voice else {
+//                return false
+//            }
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
     
     // MARK: for init setting new. (checkUserSetting new virsion.)
     func userSettingCheck() -> Bool {
@@ -63,17 +67,17 @@ class UserSetting {
         }
     }
     
-    func saveToDatabase() {
-        let afterUserRef = Database.database().reference().child("users").child("after_init")
-        let beforeUserRef = Database.database().reference().child("users").child("before_init")
-        
-        beforeUserRef.child(uid).observeSingleEvent(of: .value) { (snapshot) in
-            afterUserRef.child(self.uid).setValue(snapshot.value)
-            let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language, "toSay": self.toSay] as [String : Any]
-            afterUserRef.child(self.uid).updateChildValues(userval)
-            beforeUserRef.removeValue()
-        }
-    }
+//    func saveToDatabase() {
+//        let afterUserRef = Database.database().reference().child("users").child("after_init")
+//        let beforeUserRef = Database.database().reference().child("users").child("before_init")
+//
+//        beforeUserRef.child(uid).observeSingleEvent(of: .value) { (snapshot) in
+//            afterUserRef.child(self.uid).setValue(snapshot.value)
+//            let userval = ["nickname": self.nickname, "gender": self.gender, "language": self.language, "toSay": self.toSay, "numFriends": self.numFriends] as [String : Any]
+//            afterUserRef.child(self.uid).updateChildValues(userval)
+//            beforeUserRef.removeValue()
+//        }
+//    }
     
     func saveToDatabase_new() {
         let afterUserRef = Database.database().reference().child("users").child("after_init")
@@ -82,7 +86,7 @@ class UserSetting {
         beforeUserRef.child(uid).observeSingleEvent(of: .value) { (snapshot) in
 //            afterUserRef.child(self.uid).setValue(snapshot.value)
             let email = snapshot.childSnapshot(forPath: "email").value
-            let userval = ["email": email, "nickname": self.nickname, "gender": self.gender, "language": self.language] as [String : Any]
+            let userval = ["email": email, "nickname": self.nickname, "gender": self.gender, "language": self.language, "numFriends": self.numFriends] as [String : Any]
             
 //            afterUserRef.child(self.uid).updateChildValues(userval)
 //            beforeUserRef.removeValue()

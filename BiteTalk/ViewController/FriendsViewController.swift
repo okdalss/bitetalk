@@ -1,5 +1,5 @@
 //
-//  TotalUserViewController.swift
+//  FriendsViewController.swift
 //  BiteTalk
 //
 //  Created by 신진욱 on 11/05/2018.
@@ -9,7 +9,10 @@
 import UIKit
 import Firebase
 
-class TotalUserViewController: UIViewController {
+class FriendsViewController: UIViewController {
+    
+    var numCell = 3
+    var numFirends = 1
     
     let colors = [UIColor.black, UIColor.blue, UIColor.brown]
     var buttons: [UIButton]?
@@ -18,8 +21,11 @@ class TotalUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadUsers(loadNum: 2)
-        
+//        loadUsers(loadNum: 2)   
+    }
+    
+    func addFriendtoCell(friendCode: String, cellNumber: Int) {
+        // func. send requirement to server adding new friend. this receive friend code.
     }
     
     func addOneButton(x: Int, y: Int, width: Int, height: Int, color: UIColor, user: User) {
@@ -129,7 +135,9 @@ class TotalUserViewController: UIViewController {
 //        self.dismiss(animated: true, completion: nil)
 //        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         self.present(loginViewController, animated: false, completion: nil)
-        UserSetting.shared().destroy()
+//        UserSetting.destroy()
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
     }
 
     

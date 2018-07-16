@@ -17,6 +17,9 @@ class IntroduceViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         IntroTextLabel.addGestureRecognizer(tap)
         IntroTextLabel.isUserInteractionEnabled = true
+        
+        print("test.....................")
+        print(UserDefaults.standard.string(forKey: "uid"))
     }
 
     override func didReceiveMemoryWarning() {

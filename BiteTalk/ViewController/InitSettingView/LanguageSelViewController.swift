@@ -27,7 +27,8 @@ class LanguageSelViewController: UIViewController {
 
     @IBAction func handlePrevious(_ sender: UIButton) {
         dismiss(animated: true) {
-            UserSetting.shared().language = nil
+//            UserSetting.shared().language = nil
+            UserDefaults.standard.set(nil, forKey: "language")
         }
     }
 }

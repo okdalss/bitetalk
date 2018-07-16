@@ -21,10 +21,23 @@ class SaveInitSettingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
+            self.toTheView(viewName: "friendsview")
+        }
+    }
+    
     func saveUserSettingToDdatabase() {
-        if UserSetting.shared().userSettingCheck() {
-            UserSetting.shared().saveToDatabase_new()
-            UserSetting.shared().saveVoiceToStorage()
+//        if UserSetting.shared().userSettingCheck() {
+        if UserDefaults.standard.userDefaultsCheck() {
+//            UserSetting.shared().numFriends = 0
+//            UserSetting.shared().numCell = 3
+            UserDefaults.standard.set(0, forKey: "numFriends")
+            UserDefaults.standard.set(3, forKey: "numCell")
+//            UserSetting.shared().saveToDatabase_new()
+            UserDefaults.standard.saveToDatabase()
+//            UserSetting.shared().saveVoiceToStorage()
+            UserDefaults.standard.saveToStorage()
         }
     }
 }

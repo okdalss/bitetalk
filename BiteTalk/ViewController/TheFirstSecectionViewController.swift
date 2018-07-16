@@ -24,17 +24,12 @@ class TheFirstSecectionViewController: UIViewController {
         if loginCheckResult == true {
             checkInitsetting()
         } else {
-            UserSetting.shared().destroy()
+//            UserSetting.destroy()
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
             toTheView(viewName: "loginviewcont")
         }
     }
-    
-//    func toTheView(viewName: String) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
-//        print("go to \(viewName)")
-//        self.present(newviewcont, animated: false, completion: nil)
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,6 +40,7 @@ class TheFirstSecectionViewController: UIViewController {
         let auth = Auth.auth().currentUser?.uid
         if auth != nil {
             self.userRef = Database.database().reference().child("users").child(auth!)
+            UserDefaults.standard.set(auth, forKey: "uid")
             return true
         } else {
             print("auth is nil")
@@ -57,11 +53,13 @@ class TheFirstSecectionViewController: UIViewController {
         let afterRef = Database.database().reference().child("users").child("after_init")
         
         afterRef.observeSingleEvent(of: .value) { (snap) in
-            if snap.hasChild(UserSetting.shared().uid) {
+//            if snap.hasChild(UserSetting.shared().uid) {
+            if snap.hasChild(UserDefaults.standard.string(forKey: "uid")!) {
                 self.toTheView(viewName: "maintabbar")
             } else {
                 beforeRef.observeSingleEvent(of: .value) { (snap) in
-                    if snap.hasChild(UserSetting.shared().uid) {
+//                    if snap.hasChild(UserSetting.shared().uid) {
+                    if snap.hasChild(UserDefaults.standard.string(forKey: "uid")!) {
                         self.toTheView(viewName: "initsettingview")
                     } else {
                         print("something wrong in initsetting...")
