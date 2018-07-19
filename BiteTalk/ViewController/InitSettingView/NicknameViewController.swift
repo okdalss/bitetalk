@@ -30,7 +30,6 @@ class NicknameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func handlePrevious(_ sender: UIButton) {
         dismiss(animated: true) {
-//            UserSetting.shared().nickname = ""
             UserDefaults.standard.set("", forKey: "nickname")
         }
     }
@@ -42,7 +41,6 @@ class NicknameViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if nicknameTextfield.text!.count != 0 {
-//            UserSetting.shared().nickname = nicknameTextfield.text!
             UserDefaults.standard.set(nicknameTextfield.text!, forKey: "nickname")
             nextButton.isHidden = false
         } else {

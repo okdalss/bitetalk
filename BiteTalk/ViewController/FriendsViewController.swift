@@ -11,29 +11,33 @@ import Firebase
 
 class FriendsViewController: UIViewController {
     
-    var numCell = 3
-    var numFirends = 1
-    
     let colors = [UIColor.black, UIColor.blue, UIColor.brown]
     var buttons: [UIButton]?
     var button: UIButton?
-
+    
+    @IBOutlet weak var buttonView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        loadUsers(loadNum: 2)   
+        if UserDefaults.standard.integer(forKey: "numCell") == 0 {
+            UserDefaults.standard.setFromDatabase(completion: addButtonsCompletion)
+        }
+        addButtons(numOfUser: UserDefaults.standard.integer(forKey: "numCell"))
+    }
+    
+    private func addButtonsCompletion() {
+        addButtons(numOfUser: UserDefaults.standard.integer(forKey: "numCell"))
     }
     
     func addFriendtoCell(friendCode: String, cellNumber: Int) {
         // func. send requirement to server adding new friend. this receive friend code.
     }
     
-    func addOneButton(x: Int, y: Int, width: Int, height: Int, color: UIColor, user: User) {
-        button = UIButton(frame: CGRect(x: x, y: y, width: width, height: height))
+    func addOneButton(x: Int, y: Int, width: Int, height: Int, color: UIColor) {
+        button = FriendButton(frame: CGRect(x: x, y: y, width: width, height: height))
         button?.backgroundColor = color
-        button?.setTitle(user.toSay, for: .normal)
-//        button?.setTitleColor(UIColor.black, for: .normal)
-        self.view.addSubview(button!)
+        self.buttonView.addSubview(button!)
         print("button added...")
     }
     
@@ -41,7 +45,7 @@ class FriendsViewController: UIViewController {
         print("addButtons start...")
         var x = 10, y = 30, width = 100, height = 100
         for butt in 0..<numOfUser {
-            addOneButton(x: x, y: y, width: width, height: height, color: colors[butt], user: users[butt])
+            addOneButton(x: x, y: y, width: width, height: height, color: colors[butt])
             x = x + 105
         }
     }

@@ -58,7 +58,6 @@ class AddLangViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func handleDone(_ sender: UIBarButtonItem) {
         if selectedLanguages.count != 0 {
-//            UserSetting.shared().language = self.selectedLanguages
             UserDefaults.standard.set(self.selectedLanguages, forKey: "language")
             if let viewcont = self.presentingViewController as? LanguageSelViewController {
                 viewcont.nextLabel.isHidden = false

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        emailTextField.keyboardType = UIKeyboardType.emailAddress
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController {
                 return
             }
             UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "uid")
+            UserDefaults.standard.setFromDatabase(completion: nil)
             self.checkInitsetting()
         }
     }
@@ -49,12 +51,10 @@ class LoginViewController: UIViewController {
         let afterRef = Database.database().reference().child("users").child("after_init")
         
         afterRef.observeSingleEvent(of: .value) { (snap) in
-//            if snap.hasChild(UserSetting.shared().uid) {
             if snap.hasChild(UserDefaults.standard.string(forKey: "uid")!) {
                 self.toTheView(viewName: "maintabbar")
             } else {
                 beforeRef.observeSingleEvent(of: .value) { (snap) in
-//                    if snap.hasChild(UserSetting.shared().uid) {
                     if snap.hasChild(UserDefaults.standard.string(forKey: "uid")!) {
                         self.toTheView(viewName: "initsettingview")
                     } else {
@@ -78,14 +78,7 @@ class LoginViewController: UIViewController {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         self.present(loginViewController, animated: false, completion: nil)
     }
-    
-//    func toTheView(viewName: String) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let newviewcont = storyboard.instantiateViewController(withIdentifier: viewName)
-//        print("go to \(viewName)")
-//        self.present(newviewcont, animated: false, completion: nil)
-//    }
-    
+
     @IBAction func unwindToLoginView(segue: UIStoryboardSegue) {
         print("unwinded.")
     }

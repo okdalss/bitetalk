@@ -33,7 +33,6 @@ class GenderSelViewController: UIViewController {
         maleLabel.tintColor = oldColor
         femaleLabel.tintColor = oldColor
         nextLabel.isHidden = false
-//        UserSetting.shared().gender = 2
         UserDefaults.standard.set(2, forKey: "gender")
     }
     @IBAction func handlemale(_ sender: UIButton) {
@@ -41,7 +40,6 @@ class GenderSelViewController: UIViewController {
         maleLabel.tintColor = .blue
         femaleLabel.tintColor = oldColor
         nextLabel.isHidden = false
-//        UserSetting.shared().gender = 0
         UserDefaults.standard.set(0, forKey: "gender")
     }
     @IBAction func handleFemale(_ sender: UIButton) {
@@ -49,7 +47,6 @@ class GenderSelViewController: UIViewController {
         maleLabel.tintColor = oldColor
         femaleLabel.tintColor = .blue
         nextLabel.isHidden = false
-//        UserSetting.shared().gender = 1
         UserDefaults.standard.set(1, forKey: "gender")
     }
 }

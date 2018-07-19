@@ -12,7 +12,6 @@
 		C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0003A59208E56A0000FDB74 /* AddLangViewController.swift */; };
 		C01134B92084FED800BB6E82 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134B82084FED800BB6E82 /* LoginViewController.swift */; };
 		C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01134BA2085006900BB6E82 /* RegisterViewController.swift */; };
-		C03E8C3520922838001FD80B /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8C3420922838001FD80B /* UserSetting.swift */; };
 		C05C643D20B7C8A8005E4ED8 /* AudioSessionandRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05C643C20B7C8A8005E4ED8 /* AudioSessionandRecord.swift */; };
 		C06ADF5520863CF1004A9C9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */; };
 		C070C87020A4389900B74A03 /* TestFCMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C86F20A4389900B74A03 /* TestFCMViewController.swift */; };
@@ -29,6 +28,7 @@
 		C08B1E7B209A1C1500D00B05 /* TheFirstSecectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */; };
 		C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3EAD820AC36F300DBAAAB /* User.swift */; };
 		C0B9B94D20B7F029007EADDE /* SaveInitSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B9B94C20B7F029007EADDE /* SaveInitSettingViewController.swift */; };
+		C0C361A320FE01550043BC4F /* FriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C361A220FE01550043BC4F /* FriendButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,6 @@
 		C0003A59208E56A0000FDB74 /* AddLangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLangViewController.swift; sourceTree = "<group>"; };
 		C01134B82084FED800BB6E82 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C01134BA2085006900BB6E82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		C03E8C3420922838001FD80B /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		C03E8C3A20925FEF001FD80B /* BiteTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BiteTalk.entitlements; sourceTree = "<group>"; };
 		C05C643C20B7C8A8005E4ED8 /* AudioSessionandRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionandRecord.swift; sourceTree = "<group>"; };
 		C06ADF5420863CF1004A9C9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		C08B1E7A209A1C1500D00B05 /* TheFirstSecectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFirstSecectionViewController.swift; sourceTree = "<group>"; };
 		C0A3EAD820AC36F300DBAAAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0B9B94C20B7F029007EADDE /* SaveInitSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInitSettingViewController.swift; sourceTree = "<group>"; };
+		C0C361A220FE01550043BC4F /* FriendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendButton.swift; sourceTree = "<group>"; };
 		D27FB91D9D417FD50CF9111C /* Pods-BiteTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiteTalk/Pods-BiteTalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,8 +113,8 @@
 		C03E8C3320922800001FD80B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C03E8C3420922838001FD80B /* UserSetting.swift */,
 				C0A3EAD820AC36F300DBAAAB /* User.swift */,
+				C0C361A220FE01550043BC4F /* FriendButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,11 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01134BB2085006900BB6E82 /* RegisterViewController.swift in Sources */,
+				C0C361A320FE01550043BC4F /* FriendButton.swift in Sources */,
 				C0003A5A208E56A0000FDB74 /* AddLangViewController.swift in Sources */,
 				C0724EE320B6676C005E7B52 /* LanguageSelViewController.swift in Sources */,
 				C0B9B94D20B7F029007EADDE /* SaveInitSettingViewController.swift in Sources */,
 				C0724EE720B6C284005E7B52 /* NicknameViewController.swift in Sources */,
-				C03E8C3520922838001FD80B /* UserSetting.swift in Sources */,
 				C05C643D20B7C8A8005E4ED8 /* AudioSessionandRecord.swift in Sources */,
 				C070C87020A4389900B74A03 /* TestFCMViewController.swift in Sources */,
 				C0A3EAD920AC36F300DBAAAB /* User.swift in Sources */,
