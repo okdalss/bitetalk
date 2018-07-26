@@ -14,6 +14,7 @@ class FriendsViewController: UIViewController {
     let colors = [UIColor.black, UIColor.blue, UIColor.brown]
     var buttons: [UIButton]?
     var button: UIButton?
+    var dragEnabled = false
     
     @IBOutlet weak var buttonView: UIView!
     
@@ -30,23 +31,43 @@ class FriendsViewController: UIViewController {
         addButtons(numOfUser: UserDefaults.standard.integer(forKey: "numCell"))
     }
     
-    func addFriendtoCell(friendCode: String, cellNumber: Int) {
-        // func. send requirement to server adding new friend. this receive friend code.
+    func addButtons(numOfUser: Int) {
+        var x = 35, y = 30, width = 100, height = 100
+        for butt in 0..<numOfUser {
+            addOneButton(x: x, y: y, width: width, height: height, color: colors[butt])
+            x = x + 120
+        }
     }
     
     func addOneButton(x: Int, y: Int, width: Int, height: Int, color: UIColor) {
         button = FriendButton(frame: CGRect(x: x, y: y, width: width, height: height))
-        button?.backgroundColor = color
+//        button?.backgroundColor = color
         self.buttonView.addSubview(button!)
-        print("button added...")
+//        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.Long))
+//        button?.addGestureRecognizer(longGesture)
+//        button?.addTarget(self,
+//                         action: #selector(drag(control:event:)),
+//                         for: [UIControlEvents.touchDragInside, UIControlEvents.touchDragOutside])
     }
     
-    func addButtons(numOfUser: Int) {
-        print("addButtons start...")
-        var x = 10, y = 30, width = 100, height = 100
-        for butt in 0..<numOfUser {
-            addOneButton(x: x, y: y, width: width, height: height, color: colors[butt])
-            x = x + 105
+    @objc
+    func Long() {
+        print("long.....")
+        dragEnabled = true
+    }
+    
+    @objc
+    private func drag(control: UIControl, event: UIEvent) {
+        if dragEnabled == true {
+            if let center = event.allTouches?.first?.location(in: buttonView) {
+                if center.x < buttonView.bounds.minX || center.x > buttonView.bounds.maxX || center.y < buttonView.bounds.minY || center.y > buttonView.bounds.maxY {
+                    return
+                } else {
+                    control.center = center
+                }
+            }
+        } else {
+            return
         }
     }
 
@@ -57,11 +78,7 @@ class FriendsViewController: UIViewController {
     
     var firstUpdate = true
     var lastChild: String?
-    var users = [User]() {
-        didSet {
-            print("users setted... \(users)")
-        }
-    }
+    var users = [User]()
     
     func loadUsers(loadNum: UInt) {
         let afterInitUserRef = Database.database().reference().child("users").child("after_init")

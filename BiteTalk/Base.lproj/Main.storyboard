@@ -376,13 +376,13 @@ you want to meet?</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="My Best Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-Qf-IRS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Best Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-Qf-IRS">
                                 <rect key="frame" x="117" y="61" width="140" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="you can add cell by number of ways..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKh-oy-zvk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you can add cell by number of ways..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKh-oy-zvk">
                                 <rect key="frame" x="44" y="93" width="287" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -396,25 +396,30 @@ you want to meet?</string>
                                     <action selector="handleLogout:" destination="S5F-cI-3Ax" eventType="touchUpInside" id="eZC-JG-knI"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kz1-LO-ekj">
-                                <rect key="frame" x="0.0" y="122" width="375" height="458"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrO-FO-0vc">
+                                <rect key="frame" x="0.0" y="135" width="375" height="445"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xrO-FO-0vc" firstAttribute="leading" secondItem="tOb-RX-ZGd" secondAttribute="leading" id="1lM-fn-hfL"/>
+                            <constraint firstItem="dWW-Qf-IRS" firstAttribute="centerX" secondItem="tOb-RX-ZGd" secondAttribute="centerX" id="9mj-TI-c1Z"/>
+                            <constraint firstItem="xrO-FO-0vc" firstAttribute="top" secondItem="TKh-oy-zvk" secondAttribute="bottom" constant="21" id="NN8-I6-Dhu"/>
                             <constraint firstItem="dWW-Qf-IRS" firstAttribute="centerX" secondItem="TKh-oy-zvk" secondAttribute="centerX" id="Rvp-45-gVO"/>
                             <constraint firstItem="TKh-oy-zvk" firstAttribute="top" secondItem="dWW-Qf-IRS" secondAttribute="bottom" constant="8" symbolic="YES" id="W3f-Ta-pjR"/>
+                            <constraint firstItem="dHu-BT-D8f" firstAttribute="top" secondItem="xrO-FO-0vc" secondAttribute="bottom" constant="8" symbolic="YES" id="WMt-2U-LiF"/>
                             <constraint firstItem="dHu-BT-D8f" firstAttribute="bottom" secondItem="yHb-dB-vwQ" secondAttribute="bottom" id="ZRw-y7-Xba"/>
                             <constraint firstItem="dHu-BT-D8f" firstAttribute="trailing" secondItem="tOb-RX-ZGd" secondAttribute="trailingMargin" id="ub5-Hs-6og"/>
+                            <constraint firstItem="xrO-FO-0vc" firstAttribute="centerX" secondItem="TKh-oy-zvk" secondAttribute="centerX" id="waM-AE-dZ3"/>
                             <constraint firstItem="dWW-Qf-IRS" firstAttribute="top" secondItem="yHb-dB-vwQ" secondAttribute="top" constant="41" id="y6l-sY-djh"/>
+                            <constraint firstItem="TKh-oy-zvk" firstAttribute="centerX" secondItem="tOb-RX-ZGd" secondAttribute="centerX" id="yiZ-os-uXc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yHb-dB-vwQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="friends" id="AQ0-kA-rGf"/>
                     <connections>
-                        <outlet property="buttonView" destination="kz1-LO-ekj" id="YwB-Lc-rEr"/>
+                        <outlet property="buttonView" destination="xrO-FO-0vc" id="pP2-Wp-B23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjU-1v-BVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
